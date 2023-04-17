@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:35 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/13 11:08:11 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:15:47 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,24 @@
 ** de traiter les signaux reçus.
 */
 
-void send_signals(int pid, char	*message)
+void send_signals(int pid, char	*str)
 {
-	int				letter;
-	int				i;
+	int	i;
+	int	c;
 
-	letter = 0;
-	while (message[letter])
+	c = 0;
+	while (str[c])
 	{
 		i = -1;
 		while (++i < 8)
 		{
-			if (((unsigned char)(message[letter] >> (7 - i)) & 1) == 0)
+			if (((unsigned char)(str[c] >> (7 - i)) & 1) == 0)
 				kill(pid, SIGUSR1);
-			else if (((unsigned char)(message[letter] >> (7 - i)) & 1) == 1)
+			else if (((unsigned char)(str[c] >> (7 - i)) & 1) == 1)
 				kill(pid, SIGUSR2);
 			usleep(50);
 		}
-	letter++;
+		c++;
 	}
 	i = 0;
 	while (i++ < 8)
@@ -69,13 +69,13 @@ int	main(int argc, char **argv)
 		server_id = ft_atoi(argv[1]);	
 		if (!server_id)
 		{
-			ft_printf("[ERROR]. Wrong arg");
+			ft_printf("[ERROR]. Damn son. Wrong arg");
 			return (0);
 		}
 		message = argv[2];
 		if (message[0] == 0)
 		{
-			ft_printf("Tu n'as envoyé aucun texte ! Ecris un truc bro");
+			ft_printf("You need to right something Marmaduke");
 			return (0);
 		}
 		send_signals(server_id, message);
@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("[ERROR]. Too much or too few arguments.\n Make sure ");
-		ft_printf("you enter arguments as follow: ./client <PID> <MESSAGE>");
+		ft_printf("you must enter arguments as follow: ./client <PID> <MESSAGE>");
 	}
 	return (0);
 }

@@ -6,11 +6,16 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:40 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/13 11:08:08 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:13:46 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+/*
+** Pour convertir des caractères en bits, qui peuvent ensuite 
+** être transmis via des signaux en messages compréhensibles.
+*/
 
 int	ft_recursive_power(int nb, int power)
 {
@@ -47,6 +52,13 @@ char	*letter_to_string(char const *s1, char const letter)
 	return (tab);
 }
 
+/*
+** Cette fonction est appelée à chaque fois que le serveur reçoit un signal 
+** SIGUSR1 ou SIGUSR2 du client. Elle est responsable de la 
+** réception et de la conversion des signaux binaires en caractères ASCII,
+**  qui sont ensuite stockés dans une chaîne de caractères pour former
+**  le message complet envoyé par le client.
+*/
 void	signal_handler(int signum)
 {
 	static int	counter = 0;
@@ -74,6 +86,13 @@ void	signal_handler(int signum)
 		len += 1;
 	}
 }
+
+/*
+** Ce code initialise le programme serveur en capturant les signaux SIGUSR1 et
+** SIGUSR2 et en attendant la réception de signaux en continu.
+** La fonction signal_handler sera appelée lorsqu'un signal est reçu et 
+** effectuera le traitement correspondant.
+ */
 
 int	main(void)
 {
