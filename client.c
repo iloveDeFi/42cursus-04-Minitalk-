@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:35 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/19 09:21:10 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:02:49 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("[ERROR]. Too much or too few arguments.\n Make sure ");
-		ft_printf("you must enter arguments as follow: ./client <PID> <MESSAGE>");
+		ft_printf("to be nice and wirte it properly son: ./client <PID> <MESSAGE>");
 	}
 	return (0);
 }

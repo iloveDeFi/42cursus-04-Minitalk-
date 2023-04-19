@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:40 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/19 11:24:34 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:52:59 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,11 @@ void	signal_handler(int signum)
 ** SIGUSR2 et en attendant la réception de signaux en continu.
 ** La fonction signal_handler sera appelée lorsqu'un signal est reçu et 
 ** effectuera le traitement correspondant.
+
+** signal_received.sa_handler = signal_handler; affecte la fonction 
+** signal_handler à la variable sa_handler de la structure signal_received.
+** La fonction signal_handler sera appelée lorsque le processus recevra 
+** le signal spécifié par sigaction.
  */
 
 int	main(void)
