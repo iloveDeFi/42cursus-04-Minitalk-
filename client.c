@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:35 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/17 14:15:47 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/19 09:21:10 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
-/*
-** Le programme envoie des signaux au processus récepteur en utilisant les valeurs 
-** binaires de chaque caractère du message pour communiquer le message caractère 
-** par caractère.
-*/

@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:40 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/17 16:13:46 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/19 10:22:18 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ int	ft_recursive_power(int nb, int power)
 	}
 }
 
-char	*letter_to_string(char const *s1, char const letter)
+/*
+** Si *s1 = "hello" et letter = '!' alors tab = hello!
+*/
+char	*add_letter_to_string(char const *s1, char const letter)
 {
 	int		i;
 	int		j;
@@ -75,7 +78,7 @@ void	signal_handler(int signum)
 	counter++;
 	if (counter == 8)
 	{
-		final = letter_to_string(final, result);
+		final = add_letter_to_string(final, result);
 		if (result == '\0')
 		{
 			ft_printf("%s\n", final);
