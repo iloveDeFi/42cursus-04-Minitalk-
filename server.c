@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:40 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/19 10:22:18 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/19 11:24:34 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,13 @@ char	*add_letter_to_string(char const *s1, char const letter)
 }
 
 /*
-** Cette fonction est appelée à chaque fois que le serveur reçoit un signal 
+** On utilise la fonction signal_handler pour écouter les signaux et 
+reconstruire la chaîne de caractères. en utilisant le code ASCII, 
+** chaque caractère sera représenté par un octet (8 bits) de données. 
+** Cela signifie que le processus émetteur devra envoyer huit signaux 
+** (SIGUSR1 ou SIGUSR2) pour chaque caractère de la chaîne.
+**
+** Signal_handler est appelée à chaque fois que le serveur reçoit un signal 
 ** SIGUSR1 ou SIGUSR2 du client. Elle est responsable de la 
 ** réception et de la conversion des signaux binaires en caractères ASCII,
 **  qui sont ensuite stockés dans une chaîne de caractères pour former
