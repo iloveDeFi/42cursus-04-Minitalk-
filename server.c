@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:40 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/25 15:26:15 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:55:47 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_recursive_power(int nb, int power)
 }
 
 /*
-** On ajoute une lettre a la string *s1 = "hello" et letter = '!' alors tab = hello!
+** On add une lettre à la string *s1 = "hello" et letter = '!' alors tab = hello!
 */
 char	*add_letter_to_string(char const *s1, char const letter)
 {
