@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:40 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:55:47 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:16:17 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char	*add_letter_to_string(char const *s1, char const letter)
 	tab[j] = 0;
 	free ((void *)(s1));
 	return (tab);
+	free(tab);
 }
 
 /*
@@ -86,6 +87,7 @@ void	signal_handler(int signum)
 		if (result == '\0')
 		{
 			ft_printf("%s\n", final);
+			free(final);
 			final = NULL;
 		}
 		counter = 0;

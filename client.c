@@ -6,7 +6,7 @@
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:35 by bbessard          #+#    #+#             */
-/*   Updated: 2023/04/25 15:50:02 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:15:14 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ int	main(int argc, char **argv)
 		message = argv[2];
 		if (message[0] == 0)
 		{
-			ft_printf("NOPE, you need to write something quick Marmaduke");
+			ft_printf("NOPE, you need to write something Marmaduke");
 		}
 		send_signals(server_id, message);
 	}
 	else
 	{
-		ft_printf("[ERROR]. Bingpot! You only need 2 arguments.\n");
+		ft_printf("[ERROR]. Bingpot! You need only 2 arguments.\n");
 		ft_printf("Write it properly son: ./client <PID> <MESSAGE>");
 	}
 	return (0);
