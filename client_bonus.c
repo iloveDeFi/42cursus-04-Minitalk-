@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbessard <bbessard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:28:35 by bbessard          #+#    #+#             */
-/*   Updated: 2023/05/03 09:15:14 by bbessard         ###   ########.fr       */
+/*   Updated: 2023/05/08 09:44:45 by bbessard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-/*
-** On prend en argument le ProcessID et un message. 
-** On envoie le message caractère par caractère en convertissant 
-** chaque caractère en sa représentation binaire.
-** On envoie un signal en fonction de la valeur de chaque bit binaire. 
-** Si le bit est 0, on envoie un signal SIGUSR1 et si le bit est 1, 
-** on envoie un signal SIGUSR2. .
-** On utilise la fonction usleep pour ralentir l'envoi des signaux 
-** afin de permettre au processus récepteur de traiter les signaux reçus.
-*/
 
 void	send_signals(int pid, char	*str)
 {
@@ -49,17 +38,6 @@ void	send_signals(int pid, char	*str)
 		usleep(50);
 	}
 }
-
-/*
-** On prend en arguments: le PID du processus de 
-** réception et le message à envoyer.
-** On vérifie que deux arguments ont été passés en entrée.
-** On convertit le PID en entier et on stocke le message dans une variable. 
-** On gère les erreurs. Si le PID est invalide ou si le message est vide, 
-** on affiche un message d'erreur correspondant. Sinon, on
-** appelle la fonction send_signals pour envoyer le message au 
-** processus récepteur!
-*/
 
 int	main(int argc, char **argv)
 {
